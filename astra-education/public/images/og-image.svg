@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0A1F44"/>
+
+  <!-- Subtle grid pattern -->
+  <g stroke="#2563EB" stroke-width="1" opacity="0.08">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Right side circuit decoration -->
+  <g opacity="0.15">
+    <circle cx="950" cy="200" r="120" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+    <circle cx="950" cy="200" r="80" fill="none" stroke="#2563EB" stroke-width="1"/>
+    <circle cx="950" cy="200" r="40" fill="#2563EB" opacity="0.3"/>
+    <line x1="830" y1="200" x2="720" y2="200" stroke="#2563EB" stroke-width="1.5"/>
+    <line x1="950" y1="80" x2="950" y2="0" stroke="#2563EB" stroke-width="1.5"/>
+    <line x1="1070" y1="200" x2="1180" y2="200" stroke="#2563EB" stroke-width="1.5"/>
+    <line x1="950" y1="320" x2="950" y2="420" stroke="#2563EB" stroke-width="1.5"/>
+    <circle cx="720" cy="200" r="6" fill="#2563EB"/>
+    <circle cx="1180" cy="200" r="6" fill="#2563EB"/>
+    <circle cx="950" cy="420" r="6" fill="#2563EB"/>
+  </g>
+
+  <!-- Blue left accent bar -->
+  <rect x="80" y="180" width="5" height="270" rx="3" fill="#2563EB" opacity="0.8"/>
+
+  <!-- Tag line above heading -->
+  <text x="110" y="222" font-family="sans-serif" font-size="18" font-weight="600" 
+        letter-spacing="4" fill="#2563EB" opacity="0.9">
+    NEP 2020 ALIGNED · CLASSES 1–9 · ASSAM
+  </text>
+
+  <!-- Main headline -->
+  <text x="110" y="298" font-family="sans-serif" font-size="52" font-weight="800" fill="#F8FAFC">
+    Robotics, Coding &amp; AI
+  </text>
+  <text x="110" y="360" font-family="sans-serif" font-size="52" font-weight="800" fill="#F8FAFC">
+    for Schools in Assam
+  </text>
+
+  <!-- Subheading -->
+  <text x="110" y="410" font-family="sans-serif" font-size="22" fill="#94A3B8">
+    Fully managed. Delivered inside your school.
+  </text>
+  <text x="110" y="440" font-family="sans-serif" font-size="22" fill="#94A3B8">
+    Zero risk to your institution.
+  </text>
+
+  <!-- Three pillars -->
+  <g>
+    <!-- Robotics pill -->
+    <rect x="110" y="480" width="145" height="44" rx="8" fill="#2563EB" opacity="0.2"/>
+    <rect x="110" y="480" width="145" height="44" rx="8" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="182" y="507" font-family="sans-serif" font-size="16" font-weight="700" 
+          fill="#F8FAFC" text-anchor="middle">ROBOTICS</text>
+
+    <!-- Coding pill -->
+    <rect x="272" y="480" width="120" height="44" rx="8" fill="#2563EB" opacity="0.2"/>
+    <rect x="272" y="480" width="120" height="44" rx="8" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="332" y="507" font-family="sans-serif" font-size="16" font-weight="700" 
+          fill="#F8FAFC" text-anchor="middle">CODING</text>
+
+    <!-- AI pill -->
+    <rect x="409" y="480" width="80" height="44" rx="8" fill="#F59E0B" opacity="0.25"/>
+    <rect x="409" y="480" width="80" height="44" rx="8" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="449" y="507" font-family="sans-serif" font-size="16" font-weight="700" 
+          fill="#F59E0B" text-anchor="middle">AI</text>
+  </g>
+
+  <!-- Brand name bottom right -->
+  <text x="1120" y="590" font-family="sans-serif" font-size="20" font-weight="700" 
+        fill="#F8FAFC" text-anchor="end" opacity="0.6">
+    ASTRA EDUCATION
+  </text>
+  <text x="1120" y="612" font-family="sans-serif" font-size="14" 
+        fill="#64748B" text-anchor="end">
+    astraeducation.in
+  </text>
+</svg>
