@@ -16,16 +16,16 @@ export const about = {
 
   founders: [
     {
-      name: 'Founder One',
+      name: 'Rohan Bhumij',
       role: 'Co-Founder & CEO',
-      credential: 'B.Tech, Assam Engineering College',
+      credential: 'MCA, Assam Engineering College',
       bio: 'With direct experience delivering technical programs inside schools, drives Astra\'s school partnerships and program delivery across Assam.',
       image: '/images/founder-1.jpg',
     },
     {
-      name: 'Founder Two',
+      name: 'Buddha Raj Rai',
       role: 'Co-Founder & CTO',
-      credential: 'B.Tech, Assam Engineering College',
+      credential: 'MCA, Assam Engineering College',
       bio: 'Leads curriculum design and hardware systems at Astra, ensuring every project students build is grounded in real engineering principles.',
       image: '/images/founder-2.jpg',
     },

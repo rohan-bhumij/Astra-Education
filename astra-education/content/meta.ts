@@ -2,7 +2,7 @@ export const meta = {
   default: {
     title: 'Astra Education — Robotics, Coding & AI Programs for Schools in Assam',
     description:
-      'Astra Education brings hands-on Robotics, Coding and AI education into schools across Assam as a fully managed, NEP 2020 aligned program for Classes 1 to 9.',
+      'Astra Education brings hands-on Robotics, Coding and AI education into schools across Assam as a fully managed, NEP 2020 aligned program.',
     keywords:
       'school robotics program Assam, coding for school students, AI education schools India, NEP 2020 skills program, technical education Dibrugarh Jorhat Tinsukia Sivasagar, EdTech Assam',
     ogImage: '/images/og-image.jpg',
@@ -11,7 +11,7 @@ export const meta = {
   home: {
     title: 'Astra Education — Robotics, Coding & AI for Schools in Assam',
     description:
-      'Hands-on Robotics, Coding and AI education delivered inside schools across Assam. Fully managed, NEP 2020 aligned, Classes 1–9.',
+      'Hands-on Electronics,Robotics, Coding and AI education delivered inside schools across Assam. Fully managed, NEP 2020 aligned',
   },
   program: {
     title: 'Our Program — Astra Education',
