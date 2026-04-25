@@ -3,8 +3,8 @@ export const site = {
   tagline: 'Real Skills. Real World. Real Future.',
   foundedBy: 'Founded by AEC Alumni · Dibrugarh, Assam',
   contact: {
-    email: 'hello@astraeducation.in',
-    phone: '+91 94351 00000',
+    email: 'info@astraeducation.in',
+    phone: '+91 9101916628',
     website: 'www.astraeducation.in',
     address: 'Dibrugarh, Assam, India',
   },

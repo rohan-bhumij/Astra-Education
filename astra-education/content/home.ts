@@ -119,7 +119,7 @@ export const home = {
         body: 'Both founders are graduates of Assam Engineering College with direct experience delivering technical programs inside schools.',
       },
       {
-        title: 'Academic Advisory — PhD, Embedded Systems',
+        title: 'Dr Nelson Varte — PhD, Embedded Systems',
         body: 'Our curriculum is developed under academic guidance from a faculty member at Assam Engineering College — ensuring engineering standards, not surface-level demonstrations.',
       },
     ],
