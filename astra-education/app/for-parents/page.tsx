@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import SectionLabel from '@/components/ui/SectionLabel';
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 import FAQ from '@/components/sections/FAQ';
@@ -16,47 +17,73 @@ const outcomes = [
     number: '01',
     title: 'Real Skills',
     description:
-      'Your child won\'t just learn about technology. They\'ll build with it — assembling robots, writing code, and training AI models with their own hands.',
+      "Your child won't just learn about technology. They'll build with it — assembling robots, writing code, and training AI models with their own hands.",
   },
   {
     number: '02',
     title: 'Future Ready',
     description:
-      'Every skill taught is directly relevant to careers in the next 10–20 years. Robotics, Python, and AI are not electives — they are the foundation of tomorrow\'s economy.',
+      'Every skill taught is directly relevant to careers in the next 10–20 years. Robotics, Electronics, Python, and AI are not electives — they are the foundation of tomorrow.',
   },
   {
     number: '03',
     title: 'Visible Progress',
     description:
-      'You\'ll see exactly what your child built every term at our showcase events. Not grades on a paper — actual working projects presented by your child.',
+      "You'll see exactly what your child built every term at our showcase events. Not grades on a paper — actual working projects presented by your child.",
   },
 ];
 
-const programSummary = [
-  { classes: 'Class 1 & 2', summary: 'Computational thinking, visual coding with Scratch Jr, and simple LED circuits.' },
-  { classes: 'Class 3 & 4', summary: 'Algorithms and interactive game-building in Scratch, introduction to sensors.' },
-  { classes: 'Class 5', summary: 'First Arduino projects, transition from block to text coding, mini sensor project.' },
-  { classes: 'Class 6', summary: 'Python fundamentals, Arduino digital I/O, first automated system project.' },
-  { classes: 'Class 7', summary: 'Python functions and data structures, sensor-controlled robot build.' },
-  { classes: 'Class 8', summary: 'Python libraries, robotics chassis and motor control, autonomous robot.' },
-  { classes: 'Class 9', summary: 'AI fundamentals, model training with real data, capstone AI + hardware project.' },
+const skillAreas = [
+  {
+    title: 'Robotics',
+    description: 'Students design, assemble, and program robots that respond to the real world.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+          d="M12 2a2 2 0 012 2v1h2a3 3 0 013 3v8a3 3 0 01-3 3H8a3 3 0 01-3-3V8a3 3 0 013-3h2V4a2 2 0 012-2zM9 13h.01M15 13h.01M9 17h6" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Electronics',
+    description: 'Students wire circuits, work with sensors, and understand how hardware works at a fundamental level.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Coding',
+    description: 'Students write real programs — starting with visual tools and progressing to Python by the senior years.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Artificial Intelligence',
+    description: 'Students train real AI models using their own data — understanding what AI does, not just what it is.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+  },
 ];
 
 const faqItems = [
   {
     question: 'Is this instead of regular school subjects?',
     answer:
-      'No. Astra runs as one additional 60-minute period per week. It does not replace any existing subject. Your child\'s core academic schedule remains unchanged.',
-  },
-  {
-    question: 'What age groups does Astra teach?',
-    answer:
-      'Class 1 through Class 9 — students aged approximately 6 to 15. The curriculum is designed to grow with the student, becoming progressively more advanced each year.',
+      "No. Astra runs as one additional 60-minute period per week. It does not replace any existing subject. Your child's core academic schedule remains unchanged.",
   },
   {
     question: 'What will my child actually make?',
     answer:
-      'Depending on their class: working electronic circuits, coded Python applications, sensor-controlled robots, fully programmable autonomous robots, and in Class 9, an AI model trained on real data. Every term ends with a built project.',
+      'Depending on their year: working electronic circuits, coded Python applications, sensor-controlled robots, fully programmable autonomous robots, and in the senior years, an AI model trained on real data. Every term ends with a built project.',
   },
   {
     question: 'Do I need to buy anything?',
@@ -67,6 +94,11 @@ const faqItems = [
     question: 'How will I know what my child is learning?',
     answer:
       'Through two channels: term-wise progress reports shared at the end of each term, and our showcase events where your child presents their project directly to you.',
+  },
+  {
+    question: 'Who teaches the sessions?',
+    answer:
+      'A trained Astra instructor — not your school teachers. Our instructors are fully managed by Astra Education, so there is no additional responsibility on school staff.',
   },
 ];
 
@@ -86,7 +118,7 @@ export default function ForParentsPage() {
               <span className="text-blue">Your Child</span>
             </h1>
             <p className="text-muted text-lg font-inter leading-relaxed">
-              Practical skills. Built from scratch. Presented every term. Here is what your child experiences inside an Astra program.
+              Practical skills. Built from scratch. Demonstrated every term.
             </p>
           </div>
         </div>
@@ -98,15 +130,11 @@ export default function ForParentsPage() {
           <AnimateOnScroll>
             <div className="text-center max-w-xl mx-auto mb-14">
               <SectionLabel text="OUTCOMES" />
-              <h2
-                id="outcomes-heading"
-                className="font-jakarta font-bold text-navy text-3xl sm:text-4xl leading-tight"
-              >
+              <h2 id="outcomes-heading" className="font-jakarta font-bold text-navy text-3xl sm:text-4xl leading-tight">
                 Three Things Every Astra Student Gains
               </h2>
             </div>
           </AnimateOnScroll>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {outcomes.map((o, i) => (
               <AnimateOnScroll key={i} delay={i * 100}>
@@ -121,31 +149,47 @@ export default function ForParentsPage() {
         </div>
       </section>
 
-      {/* Curriculum overview */}
-      <section className="bg-navy py-20 lg:py-28" aria-labelledby="curriculum-overview-heading">
+      {/* Four skill areas — no class-level detail */}
+      <section className="bg-navy py-20 lg:py-28" aria-labelledby="skills-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center max-w-xl mx-auto mb-14">
               <SectionLabel text="WHAT THEY LEARN" light />
-              <h2
-                id="curriculum-overview-heading"
-                className="font-jakarta font-bold text-white text-3xl sm:text-4xl leading-tight"
-              >
-                A Simple Overview of the Program
+              <h2 id="skills-heading" className="font-jakarta font-bold text-white text-3xl sm:text-4xl leading-tight">
+                Four Skills That Actually Matter
               </h2>
             </div>
           </AnimateOnScroll>
-
-          <div className="max-w-2xl mx-auto space-y-3">
-            {programSummary.map((row, i) => (
-              <AnimateOnScroll key={i} delay={i * 50}>
-                <div className="flex flex-col sm:flex-row sm:items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-6 py-4">
-                  <span className="font-jakarta font-bold text-blue text-sm shrink-0 w-20">{row.classes}</span>
-                  <p className="text-white/75 text-sm font-inter leading-relaxed">{row.summary}</p>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {skillAreas.map((skill, i) => (
+              <AnimateOnScroll key={i} delay={i * 80}>
+                <article className="flex items-start gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors duration-300">
+                  <div className="shrink-0 w-11 h-11 rounded-lg bg-blue/20 flex items-center justify-center text-blue">
+                    {skill.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-jakarta font-bold text-white text-base mb-1.5">{skill.title}</h3>
+                    <p className="text-white/60 text-sm font-inter leading-relaxed">{skill.description}</p>
+                  </div>
+                </article>
               </AnimateOnScroll>
             ))}
           </div>
+
+          {/* Curriculum nudge */}
+          <AnimateOnScroll>
+            <div className="text-center mt-12">
+              <p className="text-white/50 text-sm font-inter mb-4">
+                Want to understand exactly what is covered in your child&apos;s year?
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-6 py-3 bg-blue text-white font-semibold rounded-md hover:bg-blue/90 transition-colors font-inter text-sm"
+              >
+                Ask Us About the Program
+              </Link>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 

@@ -26,13 +26,19 @@ export const home = {
 
   whatWeDo: {
     sectionLabel: 'OUR SOLUTION',
-    heading: 'Three Skills. One Program. Delivered Inside Your School.',
+    heading: 'Four Skills. One Program. Delivered Inside Your School.',
     cards: [
       {
         icon: 'robot',
         title: 'Robotics',
         description:
           'Building real machines that sense, think and respond to the world around them.',
+      },
+      {
+        icon: 'electronics',
+        title: 'Electronics',
+        description:
+          'Hands-on circuits, sensors and hardware — understanding the physical layer that powers every device.',
       },
       {
         icon: 'code',
