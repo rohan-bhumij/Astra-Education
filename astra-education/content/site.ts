@@ -4,14 +4,13 @@ export const site = {
   foundedBy: 'Founded by AEC Alumni · Dibrugarh, Assam',
   contact: {
     email: 'hello@astraeducation.in',
-    phone: '+91 9101916628',
+    phone: '+91 94351 00000',
     website: 'www.astraeducation.in',
     address: 'Dibrugarh, Assam, India',
   },
   social: {
-    linkedin: 'https://linkedin.com/company/astra-education',
-    instagram: 'https://instagram.com/astra.education',
-    twitter: 'https://twitter.com/astraeducation',
+    linkedin: 'https://linkedin.com/company/astra-education',   // ← paste your LinkedIn URL here
+    instagram: 'https://instagram.com/astraeducation',          // ← paste your Instagram URL here
   },
   logo: {
     src: '/images/logo.svg',
