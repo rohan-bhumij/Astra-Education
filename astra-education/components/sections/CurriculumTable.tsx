@@ -18,51 +18,42 @@ interface CurriculumTableProps {
     subtitle: string;
     classes: ClassGroup[];
   };
-  accentColor: 'blue' | 'navy';
+  accentColor: 'blue' | 'amber';
 }
 
 export default function CurriculumTable({ band, accentColor }: CurriculumTableProps) {
-  const accentBg = accentColor === 'blue' ? 'bg-blue' : 'bg-navy';
-  const accentText = accentColor === 'blue' ? 'text-blue' : 'text-navy';
-  const accentBorder = accentColor === 'blue' ? 'border-blue' : 'border-navy';
+  const badgeText = accentColor === 'blue' ? 'text-accent' : 'text-amber';
 
   return (
     <div>
       <AnimateOnScroll>
-        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${accentBg} text-white text-xs font-semibold font-inter uppercase tracking-wider mb-3`}>
+        <p className={`caption-3 uppercase tracking-widest mb-2 ${badgeText}`}>
           {band.label}
-        </div>
-        <h3 className="font-jakarta font-bold text-navy text-2xl sm:text-3xl mb-1">
-          {band.title}
-        </h3>
-        <p className="text-muted text-sm font-inter mb-10">{band.subtitle}</p>
+        </p>
+        <h3 className="heading-4 text-navy mb-2">{band.title}</h3>
+        <p className="body-6 text-muted mb-8">{band.subtitle}</p>
       </AnimateOnScroll>
 
-      <div className="space-y-8">
+      <div className="space-y-6">
         {band.classes.map((classGroup, ci) => (
-          <AnimateOnScroll key={ci} delay={ci * 80}>
-            <div className={`rounded-xl border-2 ${accentBorder} overflow-hidden`}>
-              {/* Class header */}
-              <div className={`${accentBg} px-6 py-3`}>
-                <h4 className="font-jakarta font-bold text-white text-base">
-                  {classGroup.classLabel}
-                </h4>
+          <AnimateOnScroll key={classGroup.classLabel} delay={ci * 60}>
+            <div className="rounded-2xl border border-elevated bg-white overflow-hidden shadow-sm">
+              <div className="bg-navy px-6 py-4">
+                <h4 className="title-3 text-white">{classGroup.classLabel}</h4>
               </div>
 
-              {/* Terms */}
-              <div className="divide-y divide-border">
-                {classGroup.terms.map((term, ti) => (
-                  <div key={ti} className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-2 sm:gap-6 px-6 py-4 bg-white">
-                    <span className={`text-xs font-semibold ${accentText} font-inter uppercase tracking-wide pt-0.5`}>
+              <div className="divide-y divide-elevated">
+                {classGroup.terms.map((term) => (
+                  <div
+                    key={term.term}
+                    className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-2 sm:gap-6 px-6 py-4"
+                  >
+                    <span className={`caption-3 uppercase tracking-wide pt-1 ${badgeText}`}>
                       {term.term}
                     </span>
                     <div>
-                      <p className="font-jakarta font-semibold text-navy text-sm mb-0.5">
-                        {term.topic}
-                      </p>
-                      <p className="text-muted text-xs leading-relaxed font-inter">
-                        {term.description}
-                      </p>
+                      <p className="body-4 text-navy mb-1">{term.topic}</p>
+                      <p className="caption-2 text-muted">{term.description}</p>
                     </div>
                   </div>
                 ))}

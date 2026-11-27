@@ -1,52 +1,52 @@
 export const program = {
   hero: {
-    heading: 'What We Teach',
+    heading: 'What we teach across Classes 1 to 9',
     subheading:
-      'A structured, progressive curriculum from Class 1 to Class 9 — building real skills term by term.',
+      'A structured curriculum spanning Coding, Artificial intelligence, Electronics and 3D design, aligned with NEP 2020 and CBSE Kaushal Bodh.',
   },
 
   juniorBand: {
-    label: 'JUNIOR BAND',
-    title: 'Classes 1 – 5',
-    subtitle: 'Foundation years: thinking, building, creating.',
+    label: 'Junior band',
+    title: 'Classes 1 to 5',
+    subtitle: 'Foundation years focused on inquiry, visual logic, circuits and early 3D thinking.',
     classes: [
       {
-        classLabel: 'Class 1 & 2',
+        classLabel: 'Class 1 and 2',
         terms: [
           {
             term: 'Term 1',
-            topic: 'Computational Thinking',
-            description: 'Patterns, sequencing, and logical reasoning through games and puzzles.',
+            topic: 'Computational thinking',
+            description: 'Patterns, sequencing, and framing questions through guided puzzles.',
           },
           {
             term: 'Term 2',
-            topic: 'Scratch Jr — Visual Coding',
-            description: 'Simple animations and interactive stories using Scratch Jr.',
+            topic: 'Scratch Jr visual coding',
+            description: 'Stories, animations and interactive sequences using Scratch Jr.',
           },
           {
             term: 'Term 3',
-            topic: 'LED Circuits & Switches',
-            description: 'Hands-on circuits, switches, and problem-solving games.',
+            topic: 'LED circuits and switches',
+            description: 'Practical circuits, physical switches, and simple paper to 3D shapes.',
           },
         ],
       },
       {
-        classLabel: 'Class 3 & 4',
+        classLabel: 'Class 3 and 4',
         terms: [
           {
             term: 'Term 1',
             topic: 'Algorithms in Scratch',
-            description: 'Loops, conditionals, and algorithmic thinking in Scratch.',
+            description: 'Loops, conditionals, and structured algorithmic thinking in Scratch.',
           },
           {
             term: 'Term 2',
-            topic: 'Interactive Games',
-            description: 'Building interactive stories and games entirely in Scratch.',
+            topic: 'Interactive games',
+            description: 'Designing multi stage interactive games and presenting results.',
           },
           {
             term: 'Term 3',
-            topic: 'Sensors & Buzzers',
-            description: 'Buzzers, sensors, and simple electronic circuits.',
+            topic: 'Sensors, buzzers and CAD sketches',
+            description: 'Working with buzzers, basic sensors, and introductory 3D sketches.',
           },
         ],
       },
@@ -55,18 +55,18 @@ export const program = {
         terms: [
           {
             term: 'Term 1',
-            topic: 'Arduino Introduction',
-            description: 'Arduino concept, setup, and first programs.',
+            topic: 'Microcontroller introduction',
+            description: 'Board setup, circuit safety, and first hardware programs.',
           },
           {
             term: 'Term 2',
-            topic: 'Block-to-Text Coding',
-            description: 'Transition from block coding to text, simple automation.',
+            topic: 'Block to text coding',
+            description: 'Transitioning from visual blocks to text logic and simple automation.',
           },
           {
             term: 'Term 3',
-            topic: 'Mini Project',
-            description: 'Sensor-based model built and presented by student.',
+            topic: 'Prototype enclosure build',
+            description: 'Sensor driven model paired with a student designed physical prototype.',
           },
         ],
       },
@@ -74,27 +74,27 @@ export const program = {
   },
 
   seniorBand: {
-    label: 'SENIOR BAND',
-    title: 'Classes 6 – 9',
-    subtitle: 'Applied years: Python, Robotics, and real AI.',
+    label: 'Senior band',
+    title: 'Classes 6 to 9',
+    subtitle: 'Applied years aligned with NEP 2020 (§4.6, §4.25) and CBSE Kaushal Bodh for Classes 6 to 8.',
     classes: [
       {
         classLabel: 'Class 6',
         terms: [
           {
             term: 'Term 1',
-            topic: 'Python Fundamentals',
-            description: 'Variables, input/output, conditionals — first real programs.',
+            topic: 'Python fundamentals',
+            description: 'Variables, input and output, and conditionals in first text programs.',
           },
           {
             term: 'Term 2',
-            topic: 'Arduino Digital I/O',
-            description: 'LEDs, digital I/O, and serial monitor with Arduino.',
+            topic: 'Electronics and digital I/O',
+            description: 'Controlling LEDs, switches, and serial readings on microcontrollers.',
           },
           {
             term: 'Term 3',
-            topic: 'Automated System Project',
-            description: 'Student builds and presents an automated system project.',
+            topic: 'Automated system project',
+            description: 'Students design, wire, test cost and reuse, and present a working build.',
           },
         ],
       },
@@ -103,18 +103,18 @@ export const program = {
         terms: [
           {
             term: 'Term 1',
-            topic: 'Python — Loops & Functions',
-            description: 'Loops, functions, and data structures in Python.',
+            topic: 'Python loops and functions',
+            description: 'Reusable functions, iteration, and structured data in Python.',
           },
           {
             term: 'Term 2',
-            topic: 'Sensors Deep Dive',
-            description: 'Temperature, IR, and ultrasonic sensors — reading real data.',
+            topic: 'Sensors and CAD fabrication',
+            description: 'Reading temperature, IR, and ultrasonic sensors with 3D CAD mounts.',
           },
           {
             term: 'Term 3',
-            topic: 'Sensor-Controlled Robot',
-            description: 'Student builds a robot controlled by sensors.',
+            topic: 'Sensor controlled robot',
+            description: 'Students assemble and program a mechanism guided by sensor feedback.',
           },
         ],
       },
@@ -123,18 +123,18 @@ export const program = {
         terms: [
           {
             term: 'Term 1',
-            topic: 'Python Libraries & Data',
-            description: 'Libraries, data processing, and applied Python projects.',
+            topic: 'Python libraries and data',
+            description: 'Working with Python libraries, data analysis, and applied scripts.',
           },
           {
             term: 'Term 2',
-            topic: 'Robotics — Chassis & Motors',
-            description: 'Building chassis, motor control, and pathfinding logic.',
+            topic: 'Mechanisms, CAD and control',
+            description: '3D printed brackets, motor drivers, and pathfinding logic.',
           },
           {
             term: 'Term 3',
-            topic: 'Autonomous Robot Project',
-            description: 'Fully programmable autonomous robot built by student.',
+            topic: 'Autonomous hardware project',
+            description: 'Programmable prototype built, tested, and defended by student teams.',
           },
         ],
       },
@@ -143,18 +143,18 @@ export const program = {
         terms: [
           {
             term: 'Term 1',
-            topic: 'AI Fundamentals',
-            description: 'What AI is, how it learns, and where it is used.',
+            topic: 'Artificial intelligence fundamentals',
+            description: 'Patterns, training data, model ethics, and responsible design questions.',
           },
           {
             term: 'Term 2',
-            topic: 'Teachable Machine & ML4Kids',
-            description: 'Training models with Teachable Machine and ML4Kids.',
+            topic: 'Model training labs',
+            description: 'Training classification and vision models on curated student datasets.',
           },
           {
             term: 'Term 3',
-            topic: 'Capstone — AI + Hardware',
-            description: 'Final capstone: AI-powered hardware project presented to school.',
+            topic: 'AI and physical hardware capstone',
+            description: 'Final capstone combining trained AI models with circuits and 3D design.',
           },
         ],
       },
@@ -162,32 +162,28 @@ export const program = {
   },
 
   builds: {
-    sectionLabel: 'WHAT STUDENTS BUILD',
-    heading: 'Every Student Leaves With Real Work to Show',
+    sectionLabel: 'What students build',
+    heading: 'Every student leaves with tested work and clear reflection',
     items: [
       {
         number: '01',
-        title: 'Working Circuit',
-        description:
-          'Sensor-triggered electronics — built, wired, and tested by hand.',
+        title: 'Software apps and games',
+        description: 'Stories, interactive games, and Python applications written from scratch.',
       },
       {
         number: '02',
-        title: 'Python Application',
-        description:
-          'A real coded application — written from scratch, not copied.',
+        title: 'Trained AI models',
+        description: 'Pattern recognition and vision models trained and evaluated on real data.',
       },
       {
         number: '03',
-        title: 'Programmable Robot',
-        description:
-          'Assembled, wired, and coded to follow instructions and react to sensors.',
+        title: 'Wired electronics',
+        description: 'Circuits, switches, and sensor rigs built, calibrated, and debugged by hand.',
       },
       {
         number: '04',
-        title: 'AI Model',
-        description:
-          'A model trained on real data — understanding what AI actually does.',
+        title: '3D CAD prototypes',
+        description: 'Sketches translated into parametric 3D designs and physical prototypes.',
       },
     ],
   },

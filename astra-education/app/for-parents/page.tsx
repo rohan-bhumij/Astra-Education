@@ -1,9 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import {
+  ArrowRight,
+  BrainCircuit,
+  Code2,
+  Box,
+  Cpu,
+} from 'lucide-react';
 import SectionLabel from '@/components/ui/SectionLabel';
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 import FAQ from '@/components/sections/FAQ';
 import ContactCTA from '@/components/sections/ContactCTA';
+import { home } from '@/content/home';
 import { meta } from '@/content/meta';
 
 export const metadata: Metadata = {
@@ -15,133 +23,119 @@ export const metadata: Metadata = {
 const outcomes = [
   {
     number: '01',
-    title: 'Real Skills',
+    title: 'Real physical builds',
     description:
-      "Your child won't just learn about technology. They'll build with it — assembling robots, writing code, and training AI models with their own hands.",
+      'Students write software, wire real circuits, design 3D CAD models, and train AI systems inside guided weekly sessions.',
   },
   {
     number: '02',
-    title: 'Future Ready',
+    title: 'Beyond technical skills',
     description:
-      'Every skill taught is directly relevant to careers in the next 10–20 years. Robotics, Electronics, Python, and AI are not electives — they are the foundation of tomorrow.',
+      'Students evaluate cost, users, and material reuse, bringing financial literacy, ethics, and environmental thinking into every project.',
   },
   {
     number: '03',
-    title: 'Visible Progress',
+    title: 'Inquiry to communication',
     description:
-      "You'll see exactly what your child built every term at our showcase events. Not grades on a paper — actual working projects presented by your child.",
+      'Students frame questions, test ideas, refine work in teams, and explain results clearly through project assessment and reflection.',
   },
 ];
 
 const skillAreas = [
   {
-    title: 'Robotics',
-    description: 'Students design, assemble, and program robots that respond to the real world.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-          d="M12 2a2 2 0 012 2v1h2a3 3 0 013 3v8a3 3 0 01-3 3H8a3 3 0 01-3-3V8a3 3 0 013-3h2V4a2 2 0 012-2zM9 13h.01M15 13h.01M9 17h6" />
-      </svg>
-    ),
+    title: 'Coding',
+    description: 'Stories, games, and software applications built logically step by step.',
+    icon: Code2,
+  },
+  {
+    title: 'Artificial intelligence',
+    description: 'Patterns, curated datasets, and real machine learning models.',
+    icon: BrainCircuit,
   },
   {
     title: 'Electronics',
-    description: 'Students wire circuits, work with sensors, and understand how hardware works at a fundamental level.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+    description: 'Working circuits, physical switches, sensors, and hardware prototyping.',
+    icon: Cpu,
   },
   {
-    title: 'Coding',
-    description: 'Students write real programs — starting with visual tools and progressing to Python by the senior years.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Artificial Intelligence',
-    description: 'Students train real AI models using their own data — understanding what AI does, not just what it is.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
+    title: '3D design',
+    description: 'Engineering sketches, CAD modeling, and physical prototype fabrication.',
+    icon: Box,
   },
 ];
 
 const faqItems = [
   {
-    question: 'Is this instead of regular school subjects?',
+    question: 'Does this replace regular school subjects?',
     answer:
-      "No. Astra runs as one additional 60-minute period per week. It does not replace any existing subject. Your child's core academic schedule remains unchanged.",
+      'No. Sessions are planned cleanly inside the weekly school timetable alongside core CBSE, ASSEB Division I (formerly SEBA), or ICSE subjects.',
   },
   {
-    question: 'What will my child actually make?',
+    question: 'What skills does my child develop besides coding?',
     answer:
-      'Depending on their year: working electronic circuits, coded Python applications, sensor-controlled robots, fully programmable autonomous robots, and in the senior years, an AI model trained on real data. Every term ends with a built project.',
+      'Students build inquiry, design, teamwork, and communication habits alongside financial literacy, ethics, and environmental thinking.',
   },
   {
-    question: 'Do I need to buy anything?',
+    question: 'Do families need to purchase separate electronics kits?',
     answer:
-      'Nothing at all. All materials, hardware kits, components, and equipment are provided by Astra Education at no cost to families. Students work with Astra-owned equipment during every session.',
+      'No. Lab kits, tools, and component upkeep are planned and supplied for use inside the school technology lab.',
   },
   {
-    question: 'How will I know what my child is learning?',
+    question: 'How is student progress evaluated?',
     answer:
-      'Through two channels: term-wise progress reports shared at the end of each term, and our showcase events where your child presents their project directly to you.',
+      'Through practical project work and structured student reflection rather than rote written memorization.',
   },
   {
-    question: 'Who teaches the sessions?',
+    question: 'How does the program grow across grades?',
     answer:
-      'A trained Astra instructor — not your school teachers. Our instructors are fully managed by Astra Education, so there is no additional responsibility on school staff.',
+      'Students progress from Technology foundations in Year 01 into Robotics and 3D printing, Connected devices, Immersive technology and flight, and Space and astronomy.',
   },
 ];
 
 export default function ForParentsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-off-white py-20 lg:py-28" aria-labelledby="parents-hero-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionLabel text="FOR PARENTS" />
-            <h1
-              id="parents-hero-heading"
-              className="font-jakarta font-bold text-navy text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5"
-            >
-              What Astra Means for{' '}
-              <span className="text-blue">Your Child</span>
+      <section className="bg-base pt-24 pb-20 lg:pb-24" aria-labelledby="parents-hero-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-12">
+          <div className="max-w-[680px]">
+            <SectionLabel text="For parents" />
+            <h1 id="parents-hero-heading" className="heading-1 hero-heading-gradient mb-6">
+              Learn, explore and
+              <br />
+              build for real life.
             </h1>
-            <p className="text-muted text-lg font-inter leading-relaxed">
-              Practical skills. Built from scratch. Demonstrated every term.
+            <p className="body-3 text-muted mb-8">
+              Inside an Astra technology lab, students write code, work with real electronic components, design in 3D, and reflect on how technology serves people responsibly.
             </p>
+            <Link href="/contact" className="btn-primary">
+              <span>Ask us about the program</span>
+              <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Outcome cards */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="outcomes-heading">
+      <section
+        className="bg-surface border-y border-elevated py-20 lg:py-24"
+        aria-labelledby="outcomes-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
-            <div className="text-center max-w-xl mx-auto mb-14">
-              <SectionLabel text="OUTCOMES" />
-              <h2 id="outcomes-heading" className="font-jakarta font-bold text-navy text-3xl sm:text-4xl leading-tight">
-                Three Things Every Astra Student Gains
+            <div className="max-w-[680px] mx-auto text-center mb-16">
+              <SectionLabel text="Student growth" />
+              <h2 id="outcomes-heading" className="heading-2 text-navy">
+                {home.labTracks.beyondTechnical.heading}
               </h2>
             </div>
           </AnimateOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {outcomes.map((o, i) => (
-              <AnimateOnScroll key={i} delay={i * 100}>
-                <article className="bg-off-white rounded-xl p-8 border border-border h-full">
-                  <p className="font-jakarta font-bold text-blue text-4xl mb-4">{o.number}</p>
-                  <h3 className="font-jakarta font-bold text-navy text-xl mb-3">{o.title}</h3>
-                  <p className="text-muted text-sm leading-relaxed font-inter">{o.description}</p>
+              <AnimateOnScroll key={o.number} delay={i * 100}>
+                <article className="bg-white border border-elevated rounded-2xl p-8 h-full shadow-sm">
+                  <p className="heading-4 text-accent mb-4 tabular-nums">{o.number}</p>
+                  <h3 className="title-2 text-navy mb-3">{o.title}</h3>
+                  <p className="body-6 text-muted">{o.description}</p>
                 </article>
               </AnimateOnScroll>
             ))}
@@ -149,57 +143,44 @@ export default function ForParentsPage() {
         </div>
       </section>
 
-      {/* Four skill areas — no class-level detail */}
-      <section className="bg-navy py-20 lg:py-28" aria-labelledby="skills-heading">
+      <section className="bg-base py-20 lg:py-24" aria-labelledby="skills-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
-            <div className="text-center max-w-xl mx-auto mb-14">
-              <SectionLabel text="WHAT THEY LEARN" light />
-              <h2 id="skills-heading" className="font-jakarta font-bold text-white text-3xl sm:text-4xl leading-tight">
-                Four Skills That Actually Matter
+            <div className="max-w-[680px] mx-auto text-center mb-16">
+              <SectionLabel text="Inside the lab" />
+              <h2 id="skills-heading" className="heading-2 text-navy">
+                Four core disciplines inside one lab
               </h2>
             </div>
           </AnimateOnScroll>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {skillAreas.map((skill, i) => (
-              <AnimateOnScroll key={i} delay={i * 80}>
-                <article className="flex items-start gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors duration-300">
-                  <div className="shrink-0 w-11 h-11 rounded-lg bg-blue/20 flex items-center justify-center text-blue">
-                    {skill.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-jakarta font-bold text-white text-base mb-1.5">{skill.title}</h3>
-                    <p className="text-white/60 text-sm font-inter leading-relaxed">{skill.description}</p>
-                  </div>
-                </article>
-              </AnimateOnScroll>
-            ))}
-          </div>
 
-          {/* Curriculum nudge */}
-          <AnimateOnScroll>
-            <div className="text-center mt-12">
-              <p className="text-white/50 text-sm font-inter mb-4">
-                Want to understand exactly what is covered in your child&apos;s year?
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-6 py-3 bg-blue text-white font-semibold rounded-md hover:bg-blue/90 transition-colors font-inter text-sm"
-              >
-                Ask Us About the Program
-              </Link>
-            </div>
-          </AnimateOnScroll>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {skillAreas.map((skill, i) => {
+              const Icon = skill.icon;
+              return (
+                <AnimateOnScroll key={skill.title} delay={i * 80}>
+                  <article className="bg-surface border border-elevated rounded-2xl p-8 flex items-start gap-4 h-full">
+                    <Icon size={20} strokeWidth={1.65} className="shrink-0 text-accent mt-0.5" aria-hidden="true" />
+                    <div>
+                      <h3 className="title-2 text-navy mb-2">{skill.title}</h3>
+                      <p className="body-6 text-muted">{skill.description}</p>
+                    </div>
+                  </article>
+                </AnimateOnScroll>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       <FAQ
-        label="PARENT QUESTIONS"
-        heading="What Parents Want to Know"
+        label="Parent questions"
+        heading="What parents want to know"
         items={faqItems}
+        surface="surface"
       />
 
-      <ContactCTA />
+      <ContactCTA surface="base" />
     </>
   );
 }

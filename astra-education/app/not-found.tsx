@@ -2,42 +2,30 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found — Astra Education',
-  description: 'The page you are looking for does not exist.',
+  title: 'Page Not Found | Astra Education',
+  description: 'The page you requested could not be found.',
 };
 
 export default function NotFound() {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-off-white px-4">
-      <div className="text-center max-w-md">
-        {/* Large 404 */}
-        <p className="font-jakarta font-bold text-blue/20 text-[120px] leading-none select-none" aria-hidden="true">
+    <section className="min-h-[80vh] flex items-center justify-center bg-surface px-4 pt-24 pb-20">
+      <div className="text-center max-w-md bg-white border border-elevated rounded-2xl p-8 shadow-sm">
+        <p className="heading-1 text-accent mb-4 tabular-nums" aria-hidden="true">
           404
         </p>
-
-        <h1 className="font-jakarta font-bold text-navy text-3xl sm:text-4xl mb-4 -mt-4">
-          Page Not Found
-        </h1>
-        <p className="text-muted font-inter text-base leading-relaxed mb-8">
-          The page you are looking for does not exist or may have been moved.
-          Let&apos;s get you back on track.
+        <h1 className="heading-4 text-navy mb-4">Page not found</h1>
+        <p className="body-6 text-muted mb-8">
+          The page you are looking for does not exist or may have moved. Use the links below to return to Astra Education.
         </p>
-
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link
-            href="/"
-            className="inline-flex items-center px-6 py-3 bg-blue text-white font-semibold rounded-md hover:bg-blue/90 transition-colors font-inter text-sm"
-          >
-            Back to Home
+          <Link href="/" className="btn-primary">
+            Back to home
           </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-6 py-3 border-2 border-navy text-navy font-semibold rounded-md hover:bg-navy hover:text-white transition-colors font-inter text-sm"
-          >
-            Contact Us
+          <Link href="/contact" className="btn-secondary">
+            Request a briefing
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

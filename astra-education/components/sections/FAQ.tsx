@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Plus } from 'lucide-react';
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 import SectionLabel from '@/components/ui/SectionLabel';
 
@@ -13,83 +14,74 @@ interface FAQProps {
   label: string;
   heading: string;
   items: FAQItem[];
-  dark?: boolean;
+  surface?: 'base' | 'surface';
 }
 
-export default function FAQ({ label, heading, items, dark = false }: FAQProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+export default function FAQ({
+  label,
+  heading,
+  items,
+  surface = 'base',
+}: FAQProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const bgClass = surface === 'surface' ? 'bg-surface border-y border-elevated' : 'bg-base';
+  const cardBg = surface === 'surface' ? 'bg-white' : 'bg-surface';
 
   return (
     <section
-      className={`py-20 lg:py-28 ${dark ? 'bg-navy' : 'bg-off-white'}`}
+      className={`${bgClass} py-20 lg:py-24`}
       aria-labelledby="faq-heading"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
-          <div className="text-center mb-14">
-            <SectionLabel text={label} light={dark} />
-            <h2
-              id="faq-heading"
-              className={`font-jakarta font-bold text-3xl sm:text-4xl leading-tight ${
-                dark ? 'text-white' : 'text-navy'
-              }`}
-            >
+          <div className="text-center mb-12">
+            <SectionLabel text={label} />
+            <h2 id="faq-heading" className="heading-3 text-navy">
               {heading}
             </h2>
           </div>
         </AnimateOnScroll>
 
         <dl className="space-y-3">
-          {items.map((item, i) => (
-            <AnimateOnScroll key={i} delay={i * 60}>
-              <div
-                className={`rounded-xl border overflow-hidden ${
-                  dark
-                    ? 'border-white/10 bg-white/5'
-                    : 'border-border bg-white'
-                }`}
-              >
-                <dt>
-                  <button
-                    className={`w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold font-jakarta transition-colors ${
-                      dark
-                        ? 'text-white hover:text-gold'
-                        : 'text-navy hover:text-blue'
-                    } text-base`}
-                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                    aria-expanded={openIndex === i}
-                    aria-controls={`faq-answer-${i}`}
-                  >
-                    <span>{item.question}</span>
-                    <span
-                      className={`shrink-0 transition-transform duration-200 ${
-                        openIndex === i ? 'rotate-45' : ''
-                      }`}
-                      aria-hidden="true"
-                    >
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M12 5v14M5 12h14" />
-                      </svg>
-                    </span>
-                  </button>
-                </dt>
-                <dd
-                  id={`faq-answer-${i}`}
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === i ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
+          {items.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <AnimateOnScroll key={item.question} delay={i * 50}>
+                <div
+                  className={`${cardBg} rounded-2xl border border-elevated shadow-sm transition-colors duration-300 ease-base`}
                 >
-                  <p
-                    className={`px-6 pb-5 text-sm leading-relaxed font-inter ${
-                      dark ? 'text-white/70' : 'text-muted'
+                  <dt>
+                    <button
+                      type="button"
+                      className="w-full text-left px-6 py-6 flex items-center justify-between gap-4 title-3 text-navy hover:text-accent transition-colors duration-300 ease-base rounded-2xl"
+                      onClick={() => setOpenIndex(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-answer-${i}`}
+                    >
+                      <span>{item.question}</span>
+                      <span
+                        className={`shrink-0 transition-transform duration-300 ease-base ${
+                          isOpen ? 'rotate-45 text-accent' : 'text-muted'
+                        }`}
+                        aria-hidden="true"
+                      >
+                        <Plus size={18} strokeWidth={2} />
+                      </span>
+                    </button>
+                  </dt>
+                  <dd
+                    id={`faq-answer-${i}`}
+                    hidden={!isOpen}
+                    className={`px-6 pb-6 transition-[opacity,transform] duration-300 ease-base ${
+                      isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
                     }`}
                   >
-                    {item.answer}
-                  </p>
-                </dd>
-              </div>
-            </AnimateOnScroll>
-          ))}
+                    <p className="body-6 text-muted">{item.answer}</p>
+                  </dd>
+                </div>
+              </AnimateOnScroll>
+            );
+          })}
         </dl>
       </div>
     </section>

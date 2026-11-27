@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,34 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#0A1F44',
-        blue: '#2563EB',
-        'off-white': '#F8FAFC',
-        gold: '#F59E0B',
-        text: '#1E293B',
-        muted: '#64748B',
-        border: '#E2E8F0',
+        base: '#FFFFFF',
+        surface: '#F4F7FB',
+        card: '#FFFFFF',
+        elevated: '#E2E8F0',
+        control: '#CBD5E1',
+        warm: '#FFFBEB',
+        navy: '#0B1B36',
+        accent: '#2563EB',
+        amber: '#D97706',
+        ink: '#0F172A',
+        muted: '#475569',
       },
       fontFamily: {
-        jakarta: ['var(--font-jakarta)', 'sans-serif'],
-        inter: ['var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'sans-serif'],
       },
-      animation: {
-        'fade-up': 'fadeUp 0.6s ease-out forwards',
-        'fade-in': 'fadeIn 0.5s ease-out forwards',
-      },
-      keyframes: {
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(24px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
+      transitionTimingFunction: {
+        base: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;

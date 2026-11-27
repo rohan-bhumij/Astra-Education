@@ -1,23 +1,16 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { meta } from '@/content/meta';
 
-const jakarta = Plus_Jakarta_Sans({
+const manrope = Manrope({
   subsets: ['latin'],
-  variable: '--font-jakarta',
+  variable: '--font-manrope',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -54,7 +47,7 @@ export const metadata: Metadata = {
         url: meta.default.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Astra Education — Robotics, Coding & AI for Schools in Assam',
+        alt: 'Astra Education: Robotics, Coding and AI for Schools in Assam',
       },
     ],
   },
@@ -67,10 +60,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: meta.default.siteUrl,
-  },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -92,7 +81,7 @@ const jsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    email: 'hello@astraeducation.in',
+    email: 'info@astraeducation.in',
     availableLanguage: ['English', 'Assamese'],
   },
   sameAs: [
@@ -107,16 +96,22 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${inter.variable}`}>
+    <html lang="en" className={manrope.variable}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-base text-ink overflow-x-hidden">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-3 focus:py-2 focus:rounded-lg focus:bg-accent focus:text-white button-sm"
+        >
+          Skip to content
+        </a>
         <Navbar />
-        <main id="main-content" className="flex-1 pt-16">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
         <Footer />

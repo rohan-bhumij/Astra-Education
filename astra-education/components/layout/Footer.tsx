@@ -1,94 +1,100 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Globe,
+} from 'lucide-react';
 import { site } from '@/content/site';
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white" role="contentinfo">
+    <footer className="bg-navy text-white border-t border-slate-800" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Brand column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3" aria-label="Astra Education — Home">
+            <Link href="/" className="inline-flex items-center gap-3 rounded-lg" aria-label="Astra Education home">
               <Image
                 src={site.logo.src}
                 alt={site.logo.alt}
-                width={44}
-                height={44}
-                className="w-11 h-11 object-contain brightness-0 invert"
+                width={36}
+                height={36}
+                unoptimized
+                className="w-9 h-9 rounded-md ring-1 ring-white/20 object-contain"
               />
-              <span className="font-jakarta font-bold text-white text-lg">{site.name}</span>
+              <span className="title-2 text-white">{site.name}</span>
             </Link>
-            <p className="text-white/70 text-sm font-inter leading-relaxed max-w-xs">
-              {site.tagline}
-            </p>
-            <p className="text-white/50 text-xs font-inter">{site.foundedBy}</p>
+            <p className="body-6 text-slate-300 max-w-xs">{site.tagline}</p>
+            <p className="caption-5 text-slate-400">{site.foundedBy}</p>
+            <p className="caption-5 text-slate-400">{site.boards}</p>
           </div>
 
           {/* Quick links */}
           <nav aria-label="Footer navigation">
-            <h3 className="font-jakarta font-semibold text-white text-sm uppercase tracking-wider mb-5">
-              Quick Links
+            <h3 className="caption-3 text-white uppercase tracking-wider mb-4">
+              Explore
             </h3>
             <ul className="space-y-3" role="list">
               {site.nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-white/70 hover:text-white text-sm font-inter transition-colors duration-150"
+                    className="body-6 text-slate-300 hover:text-white transition-colors duration-300 ease-base"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href={site.ctaButton.href}
-                  className="text-white/70 hover:text-white text-sm font-inter transition-colors duration-150"
-                >
-                  {site.ctaButton.label}
-                </Link>
-              </li>
+              {site.legal.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="body-6 text-slate-300 hover:text-white transition-colors duration-300 ease-base"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
           {/* Contact */}
           <div>
-            <h3 className="font-jakarta font-semibold text-white text-sm uppercase tracking-wider mb-5">
-              Get In Touch
+            <h3 className="caption-3 text-white uppercase tracking-wider mb-4">
+              Get in touch
             </h3>
             <address className="not-italic space-y-3">
               <a
                 href={`mailto:${site.contact.email}`}
-                className="flex items-start gap-3 text-white/70 hover:text-white text-sm font-inter transition-colors duration-150"
+                className="flex items-center gap-3 body-6 text-slate-300 hover:text-white transition-colors duration-300 ease-base"
               >
-                <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                {site.contact.email}
+                <Mail size={16} strokeWidth={1.75} className="shrink-0" aria-hidden="true" />
+                <span>{site.contact.email}</span>
               </a>
               <a
                 href={`tel:${site.contact.phone.replace(/\s/g, '')}`}
-                className="flex items-start gap-3 text-white/70 hover:text-white text-sm font-inter transition-colors duration-150"
+                className="flex items-center gap-3 body-6 text-slate-300 hover:text-white transition-colors duration-300 ease-base"
               >
-                <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                {site.contact.phone}
+                <Phone size={16} strokeWidth={1.75} className="shrink-0" aria-hidden="true" />
+                <span>{site.contact.phone}</span>
               </a>
-              <p className="flex items-start gap-3 text-white/70 text-sm font-inter">
-                <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                {site.contact.address}
+              <p className="flex items-center gap-3 body-6 text-slate-300">
+                <MapPin size={16} strokeWidth={1.75} className="shrink-0" aria-hidden="true" />
+                <span>{site.contact.address}</span>
               </p>
-              <p className="flex items-start gap-3 text-white/70 text-sm font-inter">
-                <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-                {site.contact.website}
-              </p>
+              <a
+                href={`https://${site.contact.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 body-6 text-slate-300 hover:text-white transition-colors duration-300 ease-base"
+              >
+                <Globe size={16} strokeWidth={1.75} className="shrink-0" aria-hidden="true" />
+                <span>{site.contact.website}</span>
+              </a>
             </address>
           </div>
         </div>
@@ -96,22 +102,36 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs font-inter">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4">
+            <p className="caption-5 text-slate-400">
+              © {new Date().getFullYear()} {site.name}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              {site.legal.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="caption-5 text-slate-400 hover:text-white transition-colors duration-300 ease-base"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-          {/* Social links */}
           <div className="flex items-center gap-3">
             <a
               href={site.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Astra Education on LinkedIn"
-              className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-blue hover:border-blue transition-all duration-200"
+              className="w-8 h-8 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/15 transition-colors duration-300 ease-base"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
               </svg>
             </a>
             <a
@@ -119,17 +139,15 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Astra Education on Instagram"
-              className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all duration-200"
+              className="w-8 h-8 rounded-lg bg-white/5 border border-white/15 flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/15 transition-colors duration-300 ease-base"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
             </a>
           </div>
-
-          <p className="text-white/40 text-xs font-inter">
-            NEP 2020 Aligned · Assam, India
-          </p>
         </div>
       </div>
     </footer>

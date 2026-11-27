@@ -1,52 +1,52 @@
 export const about = {
   hero: {
-    sectionLabel: 'OUR STORY',
+    sectionLabel: 'Our story',
     heading: 'Built in Assam. Built for Assam.',
     subheading:
-      'Founded by engineers who saw a clear gap — and decided to close it.',
+      'Founded by Assam Engineering College alumni to bring practical technology labs inside local schools.',
   },
 
   story: {
-    heading: 'Why We Built Astra',
+    heading: 'Why we built Astra',
     paragraphs: [
-      "Astra Education was founded in Dibrugarh, Assam by two engineers who saw a clear gap — schools full of bright students, and a future full of opportunities that required skills nobody was teaching. We built Astra to close that gap, starting where we're from.",
-      "We are not a national franchise parachuting into Assam. We grew up here. We know the schools, the principals, the parents, and the students. That understanding shapes everything we build.",
+      'Astra Education was founded in Dibrugarh, Assam by two engineers who saw schools full of bright students while careers increasingly demanded practical engineering skills nobody was teaching. We built Astra to close that gap starting in our own state.',
+      'We are not a distant national franchise parachuting into Assam. We grew up here and understand local schools, principals, parents, and students across CBSE, ASSEB Division I (formerly SEBA), and ICSE institutions.',
     ],
   },
 
   founders: [
     {
       name: 'Rohan Bhumij',
-      role: 'Co-Founder & CEO',
+      role: 'Cofounder and CEO',
       credential: 'MCA, Assam Engineering College',
-      bio: 'With direct experience delivering technical programs inside schools, drives Astra\'s school partnerships and program delivery across Assam.',
-      image: '/images/founder-1.jpg',
+      bio: 'Brings direct experience delivering technical programs inside schools and leads school partnerships and operations across Assam.',
+      image: '/images/rohan-bhumij.jpg',
     },
     {
       name: 'Buddha Raj Rai',
-      role: 'Co-Founder & CTO',
+      role: 'Cofounder and CTO',
       credential: 'MCA, Assam Engineering College',
-      bio: 'Leads curriculum design and hardware systems at Astra, ensuring every project students build is grounded in real engineering principles.',
-      image: '/images/founder-2.jpg',
+      bio: 'Leads curriculum architecture and hardware lab systems at Astra, grounding every student build in sound engineering fundamentals.',
+      image: '/images/buddha-raj-rai.jpg',
     },
   ],
 
   alumni: {
-    heading: 'Founded by AEC Alumni',
-    body: 'Both founders are graduates of Assam Engineering College — one of the oldest and most respected engineering institutions in Northeast India. That foundation gives Astra its engineering credibility and its deep connection to the region.',
+    heading: 'Founded by AEC alumni',
+    body: 'Both founders graduated from Assam Engineering College, one of the oldest engineering institutions in Northeast India. That training anchors our engineering standards and our long term commitment to Assam.',
     institution: 'Assam Engineering College',
     established: 'Est. 1955 · Guwahati, Assam',
   },
 
   advisory: {
-    sectionLabel: 'ACADEMIC ADVISORY',
-    heading: 'Engineering Standards, Not Surface-Level Demos',
-    body: "Astra's curriculum is developed under the guidance of a faculty member from Assam Engineering College with a PhD in Embedded Systems. This ensures that what students learn reflects real engineering — not simplified demonstrations designed to impress without teaching.",
+    sectionLabel: 'Academic mentor',
+    heading: 'Engineering standards rather than surface level demos',
+    body: 'Curriculum modules are reviewed alongside faculty in Computer Applications at Assam Engineering College so school sessions build authentic engineering foundations.',
     advisor: {
-      name: 'Academic Advisor',
-      role: 'Faculty, Assam Engineering College',
-      credential: 'PhD, Embedded Systems',
-      image: '/images/advisor.jpg',
+      name: 'Dr. Nelson R Varte',
+      role: 'Assistant Professor, Computer Applications',
+      credential: 'Assam Engineering College',
+      image: '/images/nelson-varte.jpg',
     },
   },
 
@@ -54,17 +54,17 @@ export const about = {
     {
       title: 'Rooted in Assam',
       description:
-        'We build for Assam first — understanding local schools, local parents, and local aspirations.',
+        'We design for Assam first, respecting local school timetables, parent expectations, and student ambitions.',
     },
     {
-      title: 'Engineering Rigour',
+      title: 'Engineering rigour',
       description:
-        'Every lesson is backed by real engineering. We teach what works in the real world.',
+        'Every lesson rests on genuine coding, electronics, AI, and 3D design principles used outside the classroom.',
     },
     {
-      title: 'Zero Burden on Schools',
+      title: 'Planned with your team',
       description:
-        'We manage everything. Schools gain without bearing any operational weight.',
+        'We partner alongside school leadership on kits, instruction, upkeep, and assessment without burdening staff.',
     },
   ],
 };
